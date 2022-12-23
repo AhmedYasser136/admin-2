@@ -1,0 +1,72 @@
+<1>
+systemctl list-unit-files --type service
+
+<2>
+systemctl set-default multi-user.target
+systemctl set-default graphical.target      to return graphical
+
+<3>
+mailx -s "Hi root" root < mtemplate
+sendmail < mtemplate root
+
+<4>
+Verified
+sudo cat /var/spool/mail/root
+
+<5>
+systemctl stop postfix
+
+<6>
+mailx -s "Hi root" root < mtemplate
+
+<7>
+Not sent as postfix service is stopped
+
+<8>
+systemctl start postfix
+
+<9>
+Verified
+sudo cat /var/spool/mail/root
+
+<10>
+sudo vi /etc/default/grub
+# set GRUB_TIMEOUT=20 using vi
+sudo grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+
+<11>
+sudo vi /etc/default/grub
+# set GRUB_DEFAULT=3 using vi
+sudo grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+
+<12>
+Done
+
+<13>
+lp -d tty12 /etc/hosts
+lpstat tty12
+
+<14>
+cupsdisable tty12
+
+<15>
+Done
+
+<16>
+lpq -a
+lpq -P tty12
+
+<17>
+cancel tty12-2
+cupsenable tty12
+
+<18>
+cupsreject tty12
+
+<19>
+lp -d tty12 /etc/hosts
+lp: Destination "tty12" is not accepting jobs.
+
+<20>
+lpadmin -x tty12
+
