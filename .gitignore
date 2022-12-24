@@ -1,2 +1,4 @@
 *.odt
 *.pdf
+    git push --set-upstream origin main
+
